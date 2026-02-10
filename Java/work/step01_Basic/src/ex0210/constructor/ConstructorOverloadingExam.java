@@ -13,7 +13,8 @@ class Puppy3{
 	public Puppy3(){
 		name = "메리";
 		System.out.println("public Puppy3() 호출되었습니다.");
-		System.out.println("name: "+name+ " age: "+age);
+		System.out.println("name: "+name);
+		System.out.println("age: "+age);
 	}
 	
 	
@@ -25,7 +26,8 @@ class Puppy3{
 	public Puppy3(String name) {
 		this.name=name;
 		System.out.println("public Puppy3(String s) 호출되었습니다.");
-		System.out.println("name: "+name+ " age: "+age);
+		System.out.println("name: "+name);
+		System.out.println("age: "+age);
 	}
 	
 	/*String 타입의 인수 2개를 받는 생성자작성
@@ -60,7 +62,7 @@ class Puppy3{
 		this();
 		age = c;
 		System.out.println("public Puppy3(char c) 호출되었습니다.");
-		System.out.println(age);
+		System.out.println("age: "+age);
 	}
 	
 	
@@ -69,7 +71,8 @@ class Puppy3{
 	전역변수를 출력
 	*/	
 	public void printMemberVariable() {
-		System.out.println("name: "+name+ " age: "+age);
+		System.out.println("name: "+name);
+		System.out.println("age: "+age);
 	}
 		
 
@@ -89,7 +92,7 @@ public class ConstructorOverloadingExam{
 			System.out.println("=======4========");
 			Puppy3 p4 = new Puppy3(true);
 			System.out.println("=======5========");
-			Puppy3 p5 = new Puppy3("c");
+			Puppy3 p5 = new Puppy3('C');
 			System.out.println("================");
 			
 		//각 객체의 printMemberVariable메소드를 한번씩 호출

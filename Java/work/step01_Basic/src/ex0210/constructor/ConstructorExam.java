@@ -9,12 +9,12 @@ class Puppy{
 			"public void printPuppyName() 호출되었습니다!"출력
 			전역변수를 출력
 		*/	
-	int i =0;
-	String s;
+	int age =0;
+	String name;
 	public void printPuppyName() {
 		System.out.println("public void printPuppyName() 호출되었습니다!");
-		System.out.println(i);
-		System.out.println(s);
+		System.out.println(name);
+		System.out.println(age);
 	}
 		
 		
@@ -29,8 +29,8 @@ class Puppy{
 	public Puppy() {
 		System.out.println("public Puppy() 호출되었습니다!");
 		printPuppyName();
-		this.s = "메리";
-		this.i = -98998;
+		this.name = "메리";
+		this.age = -98998;
 	}
 		
 }
