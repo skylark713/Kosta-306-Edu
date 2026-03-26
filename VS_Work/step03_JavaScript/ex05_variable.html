@@ -9,9 +9,9 @@
   <body>
     <h1>변수에 대해서 알아보자 - var vs let vs const</h1>
     <script>
-      /*변수선언 - 선언할 때 var 생략도 가능
-                var 변수이름;
-                */
+      /*변수선언 - 선언할 때 var 생략도 가능 (전역변수일 때)
+              var 변수이름;
+              */
 
       var a;
       var b = 20;
@@ -19,7 +19,7 @@
       document.write("<h4>");
       document.write("a = " + a + " , " + typeof a + "<br>");
       document.write("b = " + b + " , " + typeof b + "<br>");
-      document.write("c = " + c + " , " + typeof c + "<br>");
+      document.write("c = " + c + " , " + typeof c + "<hr>");
 
       //값변경
       a = "안녕하세요";
@@ -28,7 +28,7 @@
 
       document.write("a = " + a + " , " + typeof a + "<br>");
       document.write("b = " + b + " , " + typeof b + "<br>");
-      document.write("c = " + c + " , " + typeof c + "<br>");
+      document.write("c = " + c + " , " + typeof c + "<hr>");
 
       /*1. 동일한 이름의 변수 또는 함수를 또 선언한다면?
         2. 변수 or 함수를 선언전에 사용한다면?
@@ -40,18 +40,57 @@
 
       var age = 20;
 
-      document.write("age = " + age + " , " + typeof age + "<br>");
+      document.write("age = " + age + " , " + typeof age + "<hr>");
 
       //함수를 호출해보자
-      test();
+      //test();
 
-      //함수에 대해서 알아보자
+      //함수에 대해서 알아보자 - 선언적 함수
       function test() {
         alert("test() 호출됨 ...1");
       }
 
       function test() {
         alert("test() 호출됨 ...2");
+      }
+
+      ////////////////////////////////////////////////////
+      document.write("<h1>변수의 scope에 대해 알아보자</h");
+      //자바스크립트에서 변수의 scope에 대해 알아보자!
+
+      var i = 10;
+
+      function test2() {
+        var i = 5; //지역변수
+        var j = 20; //지역변수
+        k = 50; //함수안에서 선언되는 변수에 var를 생략하면 전역변수
+        console.log("i=" + i);
+        console.log("this.i=" + this.i);
+        console.log("j=" + j);
+        console.log("k=" + k);
+      }
+
+      test2(); //함수호출
+      test3();
+
+      function test3() {
+        console.log("i=" + i);
+        console.log("this.i=" + this.i);
+        //console.log("j=" + j);
+        console.log("k=" + k);
+
+        //자바스크립트의 변수의 scope은 선언된 위치의 함수 단위
+        //{} 블록단위가 아니다.
+        console.log("전 : index = " + index);
+        for (var index = 0; index <= 10; index++) {}
+
+        console.log("전 : nickName = " + nickName);
+        {
+          var nickName = "희정";
+        }
+
+        console.log("후 : index = " + index);
+        console.log("후 : nickName = " + nickName);
       }
     </script>
   </body>
