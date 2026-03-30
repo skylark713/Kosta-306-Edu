@@ -640,10 +640,33 @@
       }; //funcation end
 
       // 정렬 기능 - 이름으로
+      document
+        .getElementById("sortName")
+        .addEventListener("click", function () {
+          let sortByName = shoeData.toSorted((a, b) =>
+            a.title < b.title ? -1 : a.title > b.title ? 1 : 0,
+          );
 
-      // 정렬 기능 - 닞은 가격 순
+          displayShoes(sortByName);
+        });
+
+      // 정렬 기능 - 낮은 가격 순
+      document
+        .getElementById("sortPriceLow")
+        .addEventListener("click", function () {
+          let sortByPriceLow = shoeData.toSorted((a, b) => a.price - b.price);
+
+          displayShoes(sortByPriceLow);
+        });
 
       // 정렬 기능 - 높은 가격 순
+      document
+        .getElementById("sortPriceHigh")
+        .addEventListener("click", function () {
+          let sortByPriceHigh = shoeData.toSorted((a, b) => b.price - a.price);
+
+          displayShoes(sortByPriceHigh);
+        });
 
       //로딩
       displayShoes(shoeData);
