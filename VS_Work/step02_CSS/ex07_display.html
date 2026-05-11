@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+        }
+        
+        .a {
+            background-color: red;
+        }
+        
+        .b {
+            background-color: green;
+            margin-top: 50px;
+        }
+        
+        .c {
+            background-color: blue;
+        }
+        
+        span {
+            width: 100px;
+            height: 100px;
+        }
+        /*in-line요소에 적용 안됨!*/
+        
+        #a {
+            background-color: red;
+        }
+        
+        #b {
+            background-color: green;
+            margin-left: 20px;
+            margin-right: 10px;
+            margin-top: 50px;
+            /*in-line요소에 margin-top, margin-bottom 적용안됨*/
+            margin-bottom: 20px;
+            /* display: block; */
+            display: inline-block;
+        }
+        
+        #c {
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="a">div1</div>
+    <div class="b">div2</div>
+    <div class="c">div3</div>
+    <hr />
+
+    <span id="a">span1</span><span id="b">span2</span><span id="c">span3</span>
+</body>
+
+</html>
